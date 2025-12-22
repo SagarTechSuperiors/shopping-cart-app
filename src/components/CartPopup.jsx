@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import ProtectedRoute from "./ProtectedRoute";
 import {
   removeFromCart,
   increaseQuantity,
@@ -16,6 +17,7 @@ export default function CartPopup({ visible, onClose }) {
 
   return (
     <>
+    <ProtectedRoute>
       <div
         onClick={onClose}
         style={{
@@ -132,6 +134,7 @@ export default function CartPopup({ visible, onClose }) {
           </>
         )}
       </div>
+      </ProtectedRoute>
     </>
   );
 }

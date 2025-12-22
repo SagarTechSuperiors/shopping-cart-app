@@ -1,10 +1,12 @@
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/slices/cartSlice";
+import ProtectedRoute from "./ProtectedRoute";
 
 export default function ProductCard({ product }) {
   const dispatch = useDispatch();
 
   return (
+    <ProtectedRoute>
     <div className="card h-100 shadow-sm">
       <img
         src={product.image}
@@ -31,6 +33,7 @@ export default function ProductCard({ product }) {
         </button>
       </div>
     </div>
+    </ProtectedRoute>
   );
 }
 
