@@ -1,20 +1,25 @@
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function ProtectedRoute({ children }) {
-  const isAuthenticated = useSelector(
-    (state) => state.auth.isAuthenticated
-  );
   const router = useRouter();
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     if (!isAuthenticated) {
       router.push("/login");
     }
   }, [isAuthenticated, router]);
+  if (!mounted || !isAuthenticated) {
+    return (
+      <div className="vh-100 bg-[#0b132b] d-flex align-items-center justify-content-center">
+        <div className="spinner-border text-primary" role="status"></div>
+      </div>
+    );
+  }
 
-  if (!isAuthenticated) return null;
-
-  return children;
+  return <>{children}</>;
 }

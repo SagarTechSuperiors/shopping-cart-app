@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+    images: {
+    domains: ["fakestoreapi.com"],
+  },
+  poweredByHeader: false,
+  compress: true,
   reactStrictMode: true,
 };
 

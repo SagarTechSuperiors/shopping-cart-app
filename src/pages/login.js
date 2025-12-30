@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "@/redux/slices/authSlice";
 import { useRouter } from "next/router";
-import Navbar from "@/components/Navbar";
+import Navbar from "../components/layout/Navbar";
 import Link from "next/link";
 
 export default function Login() {
@@ -50,7 +50,6 @@ export default function Login() {
 
   return (
     <>
-      <Navbar />
 
       <div
         style={{

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signup } from "@/redux/slices/authSlice";
 import { useRouter } from "next/router";
-import Navbar from "@/components/Navbar";
+import Navbar from "../components/layout/Navbar";
 import Link from "next/link";
 
 export default function Signup() {
@@ -60,8 +60,6 @@ export default function Signup() {
 
   return (
     <>
-      <Navbar />
-
       <div
         style={{
           minHeight: "100vh",
