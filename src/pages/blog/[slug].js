@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { blogs } from "../data/blogs";
+import blogs from "../../data/blogs";
 import SEO from "@/components/seo/SEO";
 
 export default function BlogDetail() {

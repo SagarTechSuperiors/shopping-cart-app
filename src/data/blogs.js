@@ -1,4 +1,4 @@
-export const blogs = [
+const blogs = [
   {
     slug: "winter-fashion-essentials-2025",
     title: "Top 7 Winter Fashion Essentials for 2025",
@@ -76,3 +76,5 @@ By making mindful choices, you contribute to a cleaner, kinder fashion ecosystem
   },
 
 ];
+
+export default blogs;

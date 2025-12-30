@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { blogs } from "../data/blogs"; 
+import blogs from "../../data/blogs"; 
 import SEO from "@/components/seo/SEO";
 
 export default function BlogList() {
@@ -25,7 +25,7 @@ export default function BlogList() {
         </header>
 
         <div className="row g-4">
-          {blogs.map((blog) => (
+          {blogs?.map((blog) => (
             <div key={blog.slug} className="col-md-6 col-lg-4">
               <div className="card h-100 shadow-lg border-0 bg-transparent overflow-hidden blog-entry-card">
 
